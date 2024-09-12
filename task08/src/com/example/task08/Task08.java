@@ -3,9 +3,12 @@ package com.example.task08;
 public class Task08 {
 
     public static boolean solution() {
-        // TODO измените тип и значение переменной x, чтобы возвращалось значение true
+        // also valid
+        // float x = Float.POSITIVE_INFINITY
 
-        int x = 100;
+        // but this is the intended solution
+        float x = 1e8f;
+
         return x == x + 1;
     }
 
