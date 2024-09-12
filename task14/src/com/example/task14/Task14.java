@@ -4,10 +4,21 @@ public class Task14 {
 
 
     public static int reverse(int value) {
+        int length = 0;
+        for (int factor = 1; factor <= value; factor *= 10) {
+            length++;
+        }
 
-        // TODO напишите здесь код, переставляющий цифры числа в обратном порядке
+        int reversedValue = 0;
+        for (int position = 0; position < length; position++) {
+            int initialValueFactor = (int)Math.pow(10, position);
+            int reversedValueFactor = (int)Math.pow(10, length - position - 1);
 
-        return 0;
+            int digit = value / initialValueFactor % 10;
+            reversedValue += digit * reversedValueFactor;
+        }
+
+        return reversedValue;
     }
 
     public static void main(String[] args) {
@@ -16,7 +27,7 @@ public class Task14 {
         /*
         int result = reverse(345);
         System.out.println(result);
-         */
+        */
     }
 
 
