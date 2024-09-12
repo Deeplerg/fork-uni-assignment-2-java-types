@@ -2,11 +2,9 @@ package com.example.task13;
 
 public class Task13 {
 
+    // why???
     public static char toUpperCase(char c) {
-
-        // TODO привести букву к верхнему регистру
-
-        return c;
+        return Character.toUpperCase(c);
     }
 
     public static void main(String[] args) {
