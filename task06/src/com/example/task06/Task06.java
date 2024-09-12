@@ -3,10 +3,13 @@ package com.example.task06;
 public class Task06 {
 
     public static int solution(int x, int y) {
+        int sum = x + y;
 
-        // TODO напишите здесь свою корректную реализацию этого метода, вместо сеществующей
+        if(sum == 0) // can't log10(0)
+            return 1;
 
-        return 0;
+        int absoluteValue = Math.abs(sum);
+        return (int)Math.log10(absoluteValue) + 1;
     }
 
     public static void main(String[] args) {
