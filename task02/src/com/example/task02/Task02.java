@@ -3,10 +3,25 @@ package com.example.task02;
 public class Task02 {
 
     public static String solution(String input) {
+        // TODO think of something better
 
-        // TODO напишите здесь свою корректную реализацию этого метода, вместо сеществующей
+        // may throw an exception and that's fine here
+        Long parsedNumber = Long.parseLong(input);
 
-        return "";
+        // LET'S GO GAMBLING!!!! https://www.youtube.com/watch?v=IPFiKEm-oNI
+        if(isWithinBounds(parsedNumber, Byte.MIN_VALUE, Byte.MAX_VALUE)) {
+            return "byte";
+        }
+        // aww dang it!
+        else if(isWithinBounds(parsedNumber, Short.MIN_VALUE, Short.MAX_VALUE)) {
+            return "short";
+        }
+        // aww dang it!
+        else if(isWithinBounds(parsedNumber, Integer.MIN_VALUE, Integer.MAX_VALUE)) {
+            return "int";
+        }
+
+        return "long";
     }
 
     public static void main(String[] args) {
@@ -18,4 +33,7 @@ public class Task02 {
          */
     }
 
+    private static boolean isWithinBounds(long number, long lower, long upper) {
+        return number >= lower && number <= upper;
+    }
 }
