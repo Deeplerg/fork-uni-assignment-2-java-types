@@ -3,10 +3,12 @@ package com.example.task07;
 public class Task07 {
 
     public static int solution(int n, int m, int k) {
+        // a hack to avoid overflow.
+        // should be fine because the other method would be to use floats
+        long divisibleN = findClosestMinimalDivisibleNumber(n, k);
+        long divisibleM = findClosestMinimalDivisibleNumber(m, k);
 
-        // TODO напишите здесь свою корректную реализацию этого метода, вместо сеществующей
-
-        return 0;
+        return (int)(divisibleN / k * divisibleM / k);
     }
 
     public static void main(String[] args) {
@@ -18,4 +20,7 @@ public class Task07 {
         */
     }
 
+    private static int findClosestMinimalDivisibleNumber(int number, int divisibleBy) {
+        return number / divisibleBy * divisibleBy;
+    }
 }
